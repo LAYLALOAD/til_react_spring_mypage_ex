@@ -1,0 +1,35 @@
+# mysql 설정
+spring:
+  datasource:
+    url:  jdbc:mysql://localhost:3306/jpa_ex?characterEncoding=utf8
+    username: root
+    password: 1234
+    driver-class-name:  com.mysql.cj.jdbc.Driver
+
+# hibernate 설정
+jpa:
+  hibernate:
+    ddl-auto: none
+  show-sql: true
+  properties:
+    hibernate:
+      format_sql: true
+      use_sql_comments: true
+      dialect:  org.hibernate.dialect.MySQL8Dialect
+
+# json 사용하는 경우 (rest api) - lazy loading
+jackson:
+  serialization:
+    fail-on-empty-beans:  false
+
+## file이 저장될 위치
+file:
+  dir: C:/Users/Maestro/spring_ex_file/
+
+
+  ## 업로드할 파일의 최대 사이즈와 멀티파트 요청 하나에 업로드 할 수 있는 총 파일 사이즈의 최대합
+  servlet:
+    multipart:
+      max-file-size: 1MB
+      max-request-size: 4MB
+      enabled: true # default
