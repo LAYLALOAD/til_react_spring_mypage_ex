@@ -2,6 +2,7 @@ import React from 'react';
 import './MypageMain.css';
 import {MypageFooterWrap} from "../components/MypageFooter";
 import {MypageSidebarWrap} from "../components/MypageSidebar";
+import {MypageHeaderWrap} from "../components/MypageHeader";
 
 const MypageMain = () => {
     return (
@@ -143,33 +144,7 @@ const MypageMain = () => {
                         <div className="text-wrapper-6">나의 좋아요</div>
                     </div>
                 </div>
-                <div className="mypage-header-wrap">
-                    <div className="header-search">
-                        <div className="text-wrapper-7">Search Here</div>
-                        <img
-                            className="search"
-                            alt="Search"
-                            src="https://cdn.animaapp.com/projects/656fc45c1d7b0bae0287709d/releases/65702bf70e1788ccd008ca5c/img/search.png"
-                        />
-                    </div>
-                    <div className="header-shortcut">
-                        <img
-                            className="vector-2"
-                            alt="Vector"
-                            src="https://cdn.animaapp.com/projects/656fc45c1d7b0bae0287709d/releases/65702bf70e1788ccd008ca5c/img/vector-1.svg"
-                        />
-                        <img
-                            className="icon-bell"
-                            alt="Icon bell"
-                            src="https://cdn.animaapp.com/projects/656fc45c1d7b0bae0287709d/releases/65702bf70e1788ccd008ca5c/img/---icon--bell-@2x.png"
-                        />
-                        <img
-                            className="element"
-                            alt="Element"
-                            src="https://cdn.animaapp.com/projects/656fc45c1d7b0bae0287709d/releases/65702bf70e1788ccd008ca5c/img/----3-1@2x.png"
-                        />
-                    </div>
-                </div>
+                <MypageHeaderWrap className="mypage-header-wrap-instance" />
                 <MypageFooterWrap className="mypage-footer-wrap-instance" />
             </div>
         </div>
