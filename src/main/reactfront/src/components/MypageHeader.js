@@ -1,5 +1,6 @@
 import React from "react";
-import "../styles/MypageHeader.css";
+import "./MypageHeader.css";
+import PropTypes from "prop-types";
 
 export const MypageHeaderWrap = ({ className }) => {
     return (
@@ -31,4 +32,9 @@ export const MypageHeaderWrap = ({ className }) => {
             </div>
         </div>
     );
+};
+
+// className props에 대한 prop-types 유효성 검사 추가
+MypageHeaderWrap.propTypes = {
+    className: PropTypes.string,
 };

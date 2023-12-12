@@ -1,5 +1,6 @@
 import React from "react";
-import "../styles/MypageSidebar.css";
+import "./MypageSidebar.css";
+import PropTypes from "prop-types";
 
 export const MypageSidebarWrap = ({ className }) => {
     return (
@@ -66,4 +67,9 @@ export const MypageSidebarWrap = ({ className }) => {
             </div>
         </div>
     );
+};
+
+// className props에 대한 prop-types 유효성 검사 추가
+MypageSidebarWrap.propTypes = {
+    className: PropTypes.string,
 };

@@ -1,4 +1,4 @@
-package com.example.react_spring_mypage_ex.domain;
+package com.example.react_spring_mypage_ex.entity.member;
 
 import jakarta.persistence.*;
 import lombok.Getter;

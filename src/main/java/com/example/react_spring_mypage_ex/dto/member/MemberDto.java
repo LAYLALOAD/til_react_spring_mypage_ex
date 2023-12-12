@@ -1,13 +1,13 @@
-package com.example.react_spring_mypage_ex.dto;
+package com.example.react_spring_mypage_ex.dto.member;
 
-import com.example.react_spring_mypage_ex.domain.Role;
-import lombok.Getter;
-import lombok.Setter;
+import com.example.react_spring_mypage_ex.entity.member.Role;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDate;
 
-@Getter
-@Setter
+@Data
+@RequiredArgsConstructor
 public class MemberDto {
   private Long memberId;
   private String id;

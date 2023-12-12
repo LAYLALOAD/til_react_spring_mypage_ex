@@ -1,5 +1,6 @@
 import React from "react";
-import "../styles/MypageFooter.css";
+import "./MypageFooter.css";
+import PropTypes from "prop-types";
 
 export const MypageFooterWrap = ({ className }) => {
     return (
@@ -23,4 +24,9 @@ export const MypageFooterWrap = ({ className }) => {
             </div>
         </div>
     );
+};
+
+// className props에 대한 prop-types 유효성 검사 추가
+MypageFooterWrap.propTypes = {
+    className: PropTypes.string,
 };
