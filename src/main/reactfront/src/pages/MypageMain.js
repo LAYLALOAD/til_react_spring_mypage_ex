@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
-
-import axios from 'axios';
+import Axios from "axios";
 import './MypageMain.css';
 import {MypageFooterWrap} from "../components/MypageFooter";
 import {MypageSidebarWrap} from "../components/MypageSidebar";
@@ -8,26 +7,39 @@ import {MypageHeaderWrap} from "../components/MypageHeader";
 
 const MypageMain = () => {
 
-        const [connection, setConnection] = useState('');
-
-        const connectionTest = () => { // eslint-disable-line no-unused-vars
-            axios.get('http://localhost:8080/api/mypage').then((response) => {
-                setConnection(response.data);
-            }).catch((error) => {
-                setConnection(error.message);
-            })
-        }
+        const [member, setMember] = useState("");
 
         useEffect(() => {
-            connectionTest();
+            // 1번 user 로그인 되었다는 가정으로 url에 /1 추가함 (로그인 페이지 연결후 변경할 것)
+            Axios.get("http://localhost:8080/api/mypage/1").then((response) => {
+                if (response.data) {
+                    //회원 정보 확인용
+                    console.log(response.data);
+                    setMember(response.data);
+                } else {
+                    alert("failed to ");
+                }
+            });
         }, []);
+
+        // //react + spring api tests
+        // const callApi = async () => {
+        //     try {
+        //         //axios.post 경로를 스프링 경로와 일치("httpL//localhost:8080/api/{~}
+        //         const res = await Axios.post("http://localhost:8080/api/mypage");
+        //         // callApi 함수 안에 post 요청 확인용
+        //         console.log(res.data.test);
+        //     } catch(e) {
+        //         console.error("API 호출 시 오류 발생:", e);
+        //     }
+        // };
 
         return (
             <div className="index">
                 <div className="div">
                     <div className="mypage-content">
                         <div className="my-info">
-                            <div className="title">나의 정보<p>{connection}</p></div>
+                            <div className="title">나의 정보</div>
                             <div className="card"/>
                             <div className="button-edit">
                                 <div className="edit">수정</div>
@@ -40,11 +52,12 @@ const MypageMain = () => {
                                         alt="Vector"
                                         src="https://cdn.animaapp.com/projects/656fc45c1d7b0bae0287709d/releases/65702bf70e1788ccd008ca5c/img/vector.svg"
                                     />
-                                    <div className="text-wrapper">회원</div>
+                                    <div className="text-wrapper">{member.role}</div>
                                 </div>
                             </div>
                             <div className="my-info-grade">
                                 <div className="overlap">
+                                    <div className="text-wrapper">{member.gradeId}</div>
                                     <img
                                         className="grade-seed"
                                         alt="Grade seed"
@@ -55,19 +68,19 @@ const MypageMain = () => {
                             </div>
                             <div className="my-info-point">
                                 <div className="overlap">
-                                    <div className="text-wrapper-2">300 P</div>
+                                    <div className="text-wrapper-2">{member.holding}</div>
                                 </div>
                                 <div className="point">포인트</div>
                             </div>
                             <div className="my-info-email">
                                 <div className="overlap">
-                                    <div className="name-2">test@email.comph</div>
+                                    <div className="name-2">{member.email}</div>
                                 </div>
                                 <div className="email">이메일</div>
                             </div>
                             <div className="my-info-name">
                                 <div className="overlap">
-                                    <div className="name-2">홍길동</div>
+                                    <div className="name-2">{member.name}</div>
                                 </div>
                                     <div className="name">이름</div>
                             </div>

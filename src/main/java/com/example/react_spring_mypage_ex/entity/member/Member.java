@@ -1,5 +1,6 @@
 package com.example.react_spring_mypage_ex.entity.member;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -44,4 +45,12 @@ public class Member {
 
   @Column(name = "grade_id")
   private Long gradeId;
+
+
+  // 일대일 양방향 연관관계 설정
+  @OneToOne(mappedBy = "member", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  @JsonIgnore
+  private Point point;
+
 }
+

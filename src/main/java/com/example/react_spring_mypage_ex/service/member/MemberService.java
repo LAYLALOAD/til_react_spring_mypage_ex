@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 @Transactional
@@ -19,8 +21,9 @@ public class MemberService {
   }
 
   // 회원 정보 조회 메서드
-  public Member getMemberById(Long memberId) {
+  public Member findMemberByMemberId(Long memberId) {
+    Optional<Member> optionalMember = memberRepository.findByMemberId(memberId);
 
-    return memberRepository.findByMemberId(memberId);
+    return optionalMember.orElse(null);
   }
 }
