@@ -16,7 +16,7 @@ public class PointService {
   private final PointRepository pointRepository;
 
   public Point findByMemberId(Long memberId) {
-    Optional<Point> optionalPoint = pointRepository.findByMemberId(memberId);
+    Optional<Point> optionalPoint = pointRepository.findByMember_MemberId(memberId);
 
     return optionalPoint.orElse(null);
   }

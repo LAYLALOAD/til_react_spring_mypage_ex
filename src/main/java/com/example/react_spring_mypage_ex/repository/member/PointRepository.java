@@ -11,5 +11,5 @@ import java.util.Optional;
 @EnableJpaRepositories
 public interface PointRepository extends JpaRepository<Point, Long> {
 
-  Optional<Point> findByMemberId(Long member_id);
+  Optional<Point> findByMember_MemberId(Long memberId);
 }

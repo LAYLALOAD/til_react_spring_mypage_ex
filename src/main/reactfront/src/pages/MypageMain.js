@@ -22,18 +22,6 @@ const MypageMain = () => {
             });
         }, []);
 
-        // //react + spring api tests
-        // const callApi = async () => {
-        //     try {
-        //         //axios.post 경로를 스프링 경로와 일치("httpL//localhost:8080/api/{~}
-        //         const res = await Axios.post("http://localhost:8080/api/mypage");
-        //         // callApi 함수 안에 post 요청 확인용
-        //         console.log(res.data.test);
-        //     } catch(e) {
-        //         console.error("API 호출 시 오류 발생:", e);
-        //     }
-        // };
-
         return (
             <div className="index">
                 <div className="div">

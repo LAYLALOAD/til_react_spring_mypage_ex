@@ -47,4 +47,7 @@ public class MemberController {
       return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
   }
+
+  //회원 정보 삭제
+
 }
