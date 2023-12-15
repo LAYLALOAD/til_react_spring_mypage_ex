@@ -154,7 +154,7 @@ export const MypageMyinfoEdit = ({ className, buttonCancelClassName }) => {
                                 <div className="mobile-number">휴대폰 번호</div>
                             </div>
                             <div className="table-data-mobile">
-                                <p className="text-wrapper-3">010 - 0000 - 0000</p>
+                                <p className="text-wrapper-3">{member.phone}</p>
                             </div>
                         </div>
                         <div className="my-info-detail-7">
@@ -175,7 +175,7 @@ export const MypageMyinfoEdit = ({ className, buttonCancelClassName }) => {
                             <div className="table-header-email">
                                 <div className="email">이메일</div>
                             </div>
-                            <input className="table-data-email" placeholder="dlraud12@gmail.com" type="email" />
+                            <div className="name-2">{member.email}</div>
                         </div>
                         <div className="my-info-detail-name">
                             <div className="table-header-name">

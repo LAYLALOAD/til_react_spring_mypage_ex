@@ -6,7 +6,7 @@ import {MypagePasswordCheckWrap} from "../components/MypagePasswordCheck";
 
 const PasswordCheck = () => {
     return (
-        <div className="index">
+        <div className="password-check-index">
             <div className="div-2">
                 <MypageSidebarWrap className="mypage-sidebar-wrap-instance" />
                 <MypageFooterWrap className="mypage-footer-wrap-instance" />

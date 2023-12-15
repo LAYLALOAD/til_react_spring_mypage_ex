@@ -6,7 +6,7 @@ import {MypageMyinfoEdit} from "../components/MypageMyinfoEdit";
 
 const PasswordCheck = () => {
     return (
-        <div className="index">
+        <div className="myinfo-edit-index">
             <div className="div-2">
                 <MypageSidebarWrap className="mypage-sidebar-wrap-instance" />
                 <MypageFooterWrap className="mypage-footer-wrap-instance" />

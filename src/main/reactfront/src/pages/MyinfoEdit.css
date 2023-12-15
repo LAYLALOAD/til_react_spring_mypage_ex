@@ -1,4 +1,4 @@
-.index {
+.myinfo-edit-index {
     background-color: #ffffff;
     display: flex;
     flex-direction: row;
@@ -6,7 +6,7 @@
     width: 100%;
 }
 
-.index .div-2 {
+.myinfo-edit-index .div-2 {
     background-color: #ffffff;
     height: 1076px;
     overflow: hidden;
@@ -14,13 +14,13 @@
     width: 1440px;
 }
 
-.index .mypage-sidebar-wrap-instance {
+.myinfo-edit-index .mypage-sidebar-wrap-instance {
     left: 0 !important;
     position: absolute !important;
     top: 0 !important;
 }
 
-.index .mypage-footer-wrap-instance {
+.myinfo-edit-index .mypage-footer-wrap-instance {
     left: 14px !important;
     position: absolute !important;
     top: 960px !important;

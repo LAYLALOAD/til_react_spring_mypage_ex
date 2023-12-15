@@ -1,7 +1,7 @@
 * {
     margin: 0;
 }
-.index {
+.mypage-main-index {
     background-color: #ffffff;
     display: flex;
     flex-direction: row;
@@ -9,7 +9,7 @@
     width: 100%;
 }
 
-.index .div {
+.mypage-main-index .div {
     background-color: #ffffff;
     height: 1076px;
     overflow: hidden;
@@ -17,7 +17,7 @@
     width: 1440px;
 }
 
-.index .mypage-content {
+.mypage-main-index .mypage-content {
     align-items: flex-end;
     display: inline-flex;
     gap: 70px;
@@ -27,7 +27,7 @@
     top: 254px;
 }
 
-.index .my-info {
+.mypage-main-index .my-info {
     align-items: flex-start;
     display: inline-flex;
     flex: 0 0 auto;
@@ -36,7 +36,7 @@
     position: relative;
 }
 
-.index .title {
+.mypage-main-index .title {
     color: #000000;
     font-family: "Poppins", Helvetica;
     font-size: 18px;
@@ -50,7 +50,7 @@
     width: 104.9px;
 }
 
-.index .card {
+.mypage-main-index .card {
     background-color: #ffffff;
     border: 1px solid;
     border-color: #000000;
@@ -60,7 +60,7 @@
     width: 590px;
 }
 
-.index .button-edit {
+.mypage-main-index .button-edit {
     background-color: #03c75a;
     border-radius: 9px;
     height: 40px;
@@ -70,7 +70,7 @@
     width: 91px;
 }
 
-.index .edit {
+.mypage-main-index .edit {
     color: #ffffff;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -84,7 +84,7 @@
     width: 41px;
 }
 
-.index .my-info-user-status {
+.mypage-main-index .my-info-user-status {
     height: 40px;
     left: 183px;
     position: absolute;
@@ -92,7 +92,7 @@
     width: 280px;
 }
 
-.index .status {
+.mypage-main-index .status {
     color: #000000;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -105,7 +105,7 @@
     width: 54px;
 }
 
-.index .overlap-group {
+.mypage-main-index .overlap-group {
     background-image: url(https://cdn.animaapp.com/projects/656fc45c1d7b0bae0287709d/releases/65702bf70e1788ccd008ca5c/img/input.svg);
     background-size: 100% 100%;
     height: 40px;
@@ -115,7 +115,7 @@
     width: 280px;
 }
 
-.index .vector {
+.mypage-main-index .vector {
     height: 14px;
     left: 240px;
     position: absolute;
@@ -123,7 +123,7 @@
     width: 20px;
 }
 
-.index .text-wrapper {
+.mypage-main-index .text-wrapper {
     color: #000000;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -136,7 +136,7 @@
     width: 28px;
 }
 
-.index .my-info-grade {
+.mypage-main-index .my-info-grade {
     height: 40px;
     left: 127px;
     position: absolute;
@@ -144,7 +144,7 @@
     width: 336px;
 }
 
-.index .overlap {
+.mypage-main-index .overlap {
     background-image: url(https://cdn.animaapp.com/projects/656fc45c1d7b0bae0287709d/releases/65702bf70e1788ccd008ca5c/img/input.svg);
     background-size: 100% 100%;
     height: 40px;
@@ -154,7 +154,7 @@
     width: 280px;
 }
 
-.index .grade-seed {
+.mypage-main-index .grade-seed {
     height: 20px;
     left: 130px;
     object-fit: cover;
@@ -163,7 +163,7 @@
     width: 20px;
 }
 
-.index .grade {
+.mypage-main-index .grade {
     color: #000000;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -176,7 +176,7 @@
     width: 54px;
 }
 
-.index .my-info-point {
+.mypage-main-index .my-info-point {
     height: 40px;
     left: 116px;
     position: absolute;
@@ -184,12 +184,12 @@
     width: 347px;
 }
 
-.index .overlap-2 {
+.mypage-main-index .overlap-2 {
     height: 40px;
     position: relative;
 }
 
-.index .input {
+.mypage-main-index .input {
     height: 40px;
     left: 67px;
     position: absolute;
@@ -197,7 +197,7 @@
     width: 280px;
 }
 
-.index .text-wrapper-2 {
+.mypage-main-index .text-wrapper-2 {
     color: #03c75a;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -211,7 +211,7 @@
     width: 65px;
 }
 
-.index .point {
+.mypage-main-index .point {
     color: #000000;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -225,7 +225,7 @@
     width: 79px;
 }
 
-.index .my-info-email {
+.mypage-main-index .my-info-email {
     height: 40px;
     left: 116px;
     position: absolute;
@@ -233,7 +233,7 @@
     width: 347px;
 }
 
-.index .email {
+.mypage-main-index .email {
     color: #000000;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -246,7 +246,7 @@
     width: 107px;
 }
 
-.index .email-2 {
+.mypage-main-index .email-2 {
     background: transparent;
     border: none;
     color: #000000;
@@ -263,7 +263,7 @@
     width: 149px;
 }
 
-.index .my-info-name {
+.mypage-main-index .my-info-name {
     height: 40px;
     left: 128px;
     position: absolute;
@@ -271,7 +271,7 @@
     width: 335px;
 }
 
-.index .img {
+.mypage-main-index .img {
     height: 40px;
     left: 55px;
     position: absolute;
@@ -279,7 +279,7 @@
     width: 280px;
 }
 
-.index .name {
+.mypage-main-index .name {
     color: #000000;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -292,7 +292,7 @@
     width: 106px;
 }
 
-.index .name-2 {
+.mypage-main-index .name-2 {
     color: #000000;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -305,7 +305,7 @@
     width: 50px;
 }
 
-.index .my-info-profile {
+.mypage-main-index .my-info-profile {
     background-image: url(https://cdn.animaapp.com/projects/656fc45c1d7b0bae0287709d/releases/65702bf70e1788ccd008ca5c/img/----3@2x.png);
     background-position: 50% 50%;
     background-size: cover;
@@ -316,7 +316,7 @@
     width: 249px;
 }
 
-.index .my-address {
+.mypage-main-index .my-address {
     align-items: flex-start;
     display: inline-flex;
     flex: 0 0 auto;
@@ -326,7 +326,7 @@
     position: relative;
 }
 
-.index .title-2 {
+.mypage-main-index .title-2 {
     color: #000000;
     font-family: "Poppins", Helvetica;
     font-size: 18px;
@@ -340,7 +340,7 @@
     width: 199px;
 }
 
-.index .edit-wrapper {
+.mypage-main-index .edit-wrapper {
     background-color: #03c75a;
     border-radius: 9px;
     height: 40px;
@@ -350,7 +350,7 @@
     width: 91px;
 }
 
-.index .edit-2 {
+.mypage-main-index .edit-2 {
     color: #ffffff;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -364,7 +364,7 @@
     width: 41px;
 }
 
-.index .my-address-delivery {
+.mypage-main-index .my-address-delivery {
     height: 68px;
     left: 30px;
     position: absolute;
@@ -372,7 +372,7 @@
     width: 530px;
 }
 
-.index .input-2 {
+.mypage-main-index .input-2 {
     background-color: #ffffff;
     border: 0.5px solid;
     border-color: #d9d9d9;
@@ -384,7 +384,7 @@
     width: 530px;
 }
 
-.index .delivery-request {
+.mypage-main-index .delivery-request {
     color: #000000;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -397,7 +397,7 @@
     width: 144px;
 }
 
-.index .my-adress-email {
+.mypage-main-index .my-adress-email {
     height: 69px;
     left: 30px;
     position: absolute;
@@ -405,7 +405,7 @@
     width: 530px;
 }
 
-.index .placeholder-wrapper {
+.mypage-main-index .placeholder-wrapper {
     background-image: url(https://cdn.animaapp.com/projects/656fc45c1d7b0bae0287709d/releases/65702bf70e1788ccd008ca5c/img/input-5.svg);
     background-size: 100% 100%;
     height: 40px;
@@ -415,7 +415,7 @@
     width: 530px;
 }
 
-.index .placeholder {
+.mypage-main-index .placeholder {
     color: #b0b0b0;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -428,7 +428,7 @@
     width: 413px;
 }
 
-.index .email-3 {
+.mypage-main-index .email-3 {
     color: #000000;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -441,7 +441,7 @@
     width: 81px;
 }
 
-.index .my-address-contact {
+.mypage-main-index .my-address-contact {
     height: 69px;
     left: 30px;
     position: absolute;
@@ -449,7 +449,7 @@
     width: 530px;
 }
 
-.index .input-3 {
+.mypage-main-index .input-3 {
     height: 40px;
     left: 0;
     position: absolute;
@@ -457,7 +457,7 @@
     width: 530px;
 }
 
-.index .contact-number {
+.mypage-main-index .contact-number {
     color: #000000;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -470,7 +470,7 @@
     width: 43px;
 }
 
-.index .overlap-wrapper {
+.mypage-main-index .overlap-wrapper {
     height: 118px;
     left: 30px;
     position: absolute;
@@ -478,12 +478,12 @@
     width: 530px;
 }
 
-.index .overlap-3 {
+.mypage-main-index .overlap-3 {
     height: 118px;
     position: relative;
 }
 
-.index .my-address-2 {
+.mypage-main-index .my-address-2 {
     height: 118px;
     left: 0;
     position: absolute;
@@ -491,7 +491,7 @@
     width: 530px;
 }
 
-.index .input-4 {
+.mypage-main-index .input-4 {
     height: 40px;
     left: 0;
     position: absolute;
@@ -499,7 +499,7 @@
     width: 530px;
 }
 
-.index .input-5 {
+.mypage-main-index .input-5 {
     border-color: #d9d9d9;
     height: 40px;
     left: 0;
@@ -508,7 +508,7 @@
     width: 430px;
 }
 
-.index .text-wrapper-3 {
+.mypage-main-index .text-wrapper-3 {
     color: #000000;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -521,7 +521,7 @@
     width: 28px;
 }
 
-.index .button-my-address {
+.mypage-main-index .button-my-address {
     background-color: #d9d9d9;
     border-radius: 9px;
     height: 40px;
@@ -531,7 +531,7 @@
     width: 91px;
 }
 
-.index .text-wrapper-4 {
+.mypage-main-index .text-wrapper-4 {
     color: #000000;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -545,7 +545,7 @@
     width: 61px;
 }
 
-.index .my-address-receiver {
+.mypage-main-index .my-address-receiver {
     height: 68px;
     left: 30px;
     position: absolute;
@@ -553,7 +553,7 @@
     width: 530px;
 }
 
-.index .receiver {
+.mypage-main-index .receiver {
     color: #000000;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -566,7 +566,7 @@
     width: 56px;
 }
 
-.index .mypage-navigation {
+.mypage-main-index .mypage-navigation {
     align-items: flex-start;
     display: inline-flex;
     flex-direction: column;
@@ -576,7 +576,7 @@
     top: 125px;
 }
 
-.index .navigation-status {
+.mypage-main-index .navigation-status {
     align-items: flex-end;
     display: inline-flex;
     flex: 0 0 auto;
@@ -584,7 +584,7 @@
     position: relative;
 }
 
-.index .navigation {
+.mypage-main-index .navigation {
     align-items: flex-start;
     display: inline-flex;
     flex: 0 0 auto;
@@ -594,7 +594,7 @@
     position: relative;
 }
 
-.index .title-3 {
+.mypage-main-index .title-3 {
     color: #000000;
     font-family: "Poppins", Helvetica;
     font-size: 18px;
@@ -608,7 +608,7 @@
     width: 102px;
 }
 
-.index .description {
+.mypage-main-index .description {
     color: #b0b0b0;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -621,7 +621,7 @@
     left: -11px;
 }
 
-.index .navigation-directory {
+.mypage-main-index .navigation-directory {
     align-items: center;
     display: inline-flex;
     flex: 0 0 auto;
@@ -630,7 +630,7 @@
     position: relative;
 }
 
-.index .step {
+.mypage-main-index .step {
     color: #b0b0b0;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -644,7 +644,7 @@
     left: -100px;
 }
 
-.index .text-wrapper-5 {
+.mypage-main-index .text-wrapper-5 {
     color: #b0b0b0;
     font-family: "Font Awesome 5 Free-Solid", Helvetica;
     font-size: 14px;
@@ -658,7 +658,7 @@
     left: -100px;
 }
 
-.index .navbar {
+.mypage-main-index .navbar {
     align-items: center;
     display: inline-flex;
     flex: 0 0 auto;
@@ -667,7 +667,7 @@
     position: relative;
 }
 
-.index .my-information {
+.mypage-main-index .my-information {
     color: #03c75a;
     font-family: "Poppins", Helvetica;
     font-size: 14px;
@@ -681,7 +681,7 @@
     width: 78px;
 }
 
-.index .text-wrapper-6 {
+.mypage-main-index .text-wrapper-6 {
     color: #000000;
     font-family: "Poppins", Helvetica;
     font-size: 14px;

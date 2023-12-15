@@ -23,7 +23,7 @@ const MypageMain = () => {
         }, []);
 
         return (
-            <div className="index">
+            <div className="mypage-main-index">
                 <div className="div">
                     <div className="mypage-content">
                         <div className="my-info">
@@ -77,9 +77,9 @@ const MypageMain = () => {
                         <div className="my-address">
                             <div className="title-2">배송정보 관리</div>
                             <div className="card"/>
-                            <div className="edit-wrapper">
-                                <div className="edit-2">수정</div>
-                            </div>
+                            {/*<div className="edit-wrapper">*/}
+                            {/*    <div className="edit-2">수정</div>*/}
+                            {/*</div>*/}
                             <div className="my-address-delivery">
                                 <div className="input-2"/>
                                 <div className="delivery-request">배송 시 요청사항(선택)</div>
@@ -100,9 +100,9 @@ const MypageMain = () => {
                                         <div className="input-2"/>
                                         <div className="text-wrapper-3">주소</div>
                                     </div>
-                                    <div className="button-my-address">
-                                        <div className="text-wrapper-4">주소 찾기</div>
-                                    </div>
+                                    {/*<div className="button-my-address">*/}
+                                    {/*    <div className="text-wrapper-4">주소 찾기</div>*/}
+                                    {/*</div>*/}
                                 </div>
                             </div>
                             <div className="my-address-receiver">

@@ -15,11 +15,11 @@
     width: 1440px;
 }
 
-/*.mypage-my-info-edit .mypage-sidebar-wrap-instance {*/
-/*    left: 0 !important;*/
-/*    position: absolute !important;*/
-/*    top: 0 !important;*/
-/*}*/
+.mypage-my-info-edit .mypage-sidebar-wrap-instance {
+    left: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+}
 
 .mypage-my-info-edit .mypage-footer-wrap-instance {
     left: 0 !important;

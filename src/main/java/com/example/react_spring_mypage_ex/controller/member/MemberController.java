@@ -21,19 +21,6 @@ public class MemberController {
   private final MemberService memberService;
   private final PointService pointService;
 
-//  @GetMapping(value="/members")
-//  public MemberDto member(){
-//    System.out.println("MemberApiController진입");
-//    MemberDto memberDto = new MemberDto();
-//    memberDto.setId("member");
-//    memberDto.setName("member");
-//    memberDto.setEmail("member@kosta268.eco_connect");
-//    memberDto.setAddress("경기도 성남시 분당구 오리역");
-//    memberDto.setProfile("image upload");
-//
-//    return memberDto;
-//  }
-
   //회원 조회 API
   @GetMapping("/mypage/{memberId}")
   public ResponseEntity<MypageDto> getMember(@PathVariable("memberId") Long memberId) {
@@ -48,6 +35,6 @@ public class MemberController {
     }
   }
 
-  //회원 정보 삭제
+
 
 }

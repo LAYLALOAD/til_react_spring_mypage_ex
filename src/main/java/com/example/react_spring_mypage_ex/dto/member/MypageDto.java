@@ -42,3 +42,5 @@ public class MypageDto {
     this.holding = point.getHolding();
   }
 }
+
+
