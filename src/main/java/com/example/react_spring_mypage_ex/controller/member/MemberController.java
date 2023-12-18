@@ -35,6 +35,20 @@ public class MemberController {
     }
   }
 
+  // 회원 정보 수정 API
+  @PutMapping("/mypage/update")
+  public ResponseEntity<String> updateMember(@RequestBody Member updatedMember) {
+    try {
+      memberService.updateMember(updatedMember);
+      return new ResponseEntity<>("회원 정보가 성공적으로 업데이트되었습니다.", HttpStatus.OK);
+    } catch (Exception e) {
+      log.error("회원 정보 업데이트에 실패했습니다.", e);
+      return new ResponseEntity<>("회원 정보 업데이트에 실패했습니다.", HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
+
+
 
 
 }

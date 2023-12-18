@@ -26,6 +26,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
+    // Spring boot 3.x이상에서 QueryDsl 패키지를 정의하는 방법
+    implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'com.mysql:mysql-connector-j'
@@ -33,11 +35,13 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-
-
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+// === QueryDsl 빌드 옵션 (선택) ===
+def querydslDir = "$buildDir/generated/querydsl"
+
 //IntelliJ에 React 반영 시 gradle 설정 시작
 def frontendDir = "$projectDir/src/main/reactfront"
 

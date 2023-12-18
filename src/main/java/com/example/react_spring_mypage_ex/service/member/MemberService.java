@@ -27,4 +27,20 @@ public class MemberService {
     return optionalMember.orElse(null);
   }
 
+  // 회원 정보 업데이트 메서드
+  public void updateMember(Member updatedMember) {
+    Member existingMember = memberRepository.findById(updatedMember.getMemberId())
+        .orElseThrow(() -> new IllegalArgumentException("해당 회원이 존재하지 않습니다."));
+
+    // Update fields based on your requirements
+    existingMember.setName(updatedMember.getName());
+    existingMember.setEmail(updatedMember.getEmail());
+    existingMember.setAddress(updatedMember.getAddress());
+    existingMember.setPhone(updatedMember.getPhone());
+    existingMember.setProfile(updatedMember.getProfile());
+
+    // Save the updated member
+    memberRepository.save(existingMember);
+  }
+
 }

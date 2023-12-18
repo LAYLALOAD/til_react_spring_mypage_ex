@@ -62,14 +62,14 @@ export const MypagePasswordCheckWrap = ({ className, buttonCancelClassName }) =>
                     <p className="description">회원님의 정보를 안전하게 보호하기 위해 비밀번호를 다시 한 번 입력해 주세요.</p>
                 </div>
                 <div className="password-check-2">
-                    <div className="overlap-group-wrapper">
-                        <div className="overlap-group-2">
-                            <div className="input-2">
-                                <div>{member.email}</div>
-                            </div>
-                            <div className="email-2">이메일</div>
-                        </div>
-                    </div>
+                    {/*<div className="overlap-group-wrapper">*/}
+                    {/*    <div className="overlap-group-2">*/}
+                    {/*        <div className="input-2">*/}
+                    {/*            <div>{member.email}</div>*/}
+                    {/*        </div>*/}
+                    {/*        <div className="email-2">이메일</div>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                     <div className="overlap-wrapper">
                         <div className="overlap-group-2">
                             <input

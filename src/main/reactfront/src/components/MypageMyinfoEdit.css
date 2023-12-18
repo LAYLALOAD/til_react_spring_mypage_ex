@@ -165,88 +165,6 @@
     top: 75px;
 }
 
-.mypage-my-info-edit .my-info-detail-table {
-    height: 610px;
-    position: relative;
-    width: 540px;
-}
-
-.mypage-my-info-edit .overlap-group-3 {
-    height: 610px;
-    position: relative;
-}
-
-.mypage-my-info-edit .rectangle {
-    background-color: #e1e1e1;
-    height: 610px;
-    left: 1px;
-    position: absolute;
-    top: 0;
-    width: 151px;
-}
-
-.mypage-my-info-edit .line {
-    height: 1px;
-    left: 0;
-    object-fit: cover;
-    position: absolute;
-    top: 609px;
-    width: 540px;
-}
-
-.mypage-my-info-edit .img {
-    height: 1px;
-    left: 3px;
-    object-fit: cover;
-    position: absolute;
-    top: 408px;
-    width: 537px;
-}
-
-.mypage-my-info-edit .line-2 {
-    height: 1px;
-    left: 3px;
-    object-fit: cover;
-    position: absolute;
-    top: 238px;
-    width: 537px;
-}
-
-.mypage-my-info-edit .line-3 {
-    height: 1px;
-    left: 3px;
-    object-fit: cover;
-    position: absolute;
-    top: 178px;
-    width: 537px;
-}
-
-.mypage-my-info-edit .line-4 {
-    height: 1px;
-    left: 3px;
-    object-fit: cover;
-    position: absolute;
-    top: 120px;
-    width: 537px;
-}
-
-.mypage-my-info-edit .line-5 {
-    height: 1px;
-    left: 3px;
-    object-fit: cover;
-    position: absolute;
-    top: 58px;
-    width: 537px;
-}
-
-.mypage-my-info-edit .line-6 {
-    height: 1px;
-    left: 0;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    width: 540px;
-}
 
 .mypage-my-info-edit .my-info-detail-2 {
     align-items: center;
@@ -465,10 +383,10 @@
 .mypage-my-info-edit .my-info-detail-6 {
     align-items: flex-start;
     display: inline-flex;
-    gap: 127px;
+    gap: 35px;
     left: 42px;
     position: absolute;
-    top: 197px;
+    top: 230px;
 }
 
 .mypage-my-info-edit .div-wrapper-2 {
@@ -500,11 +418,21 @@
 .mypage-my-info-edit .my-info-detail-7 {
     align-items: center;
     display: inline-flex;
-    gap: 154px;
+    gap: 30px;
     justify-content: center;
     left: 42px;
     position: absolute;
-    top: 121px;
+    top: 140px;
+}
+
+.mypage-my-info-edit .my-info-detail-9 {
+    align-items: center;
+    display: inline-flex;
+    gap: 90px;
+    justify-content: center;
+    left: 42px;
+    position: absolute;
+    top: 185px;
 }
 
 .mypage-my-info-edit .profile-image {
@@ -530,12 +458,11 @@
 }
 
 .mypage-my-info-edit .my-info-detail-8 {
-    background-image: url(https://cdn.animaapp.com/projects/656fc45c1d7b0bae0287709d/releases/657a6e122b273e23cc76b3ca/img/----3@2x.png);
     background-position: 50% 50%;
     background-size: cover;
-    height: 56px;
+    height: 40px;
     position: relative;
-    width: 70px;
+    width: 55px;
 }
 
 .mypage-my-info-edit .overlap-group-wrapper {
@@ -622,7 +549,7 @@
 .mypage-my-info-edit .my-info-detail-name {
     align-items: center;
     display: inline-flex;
-    gap: 111px;
+    gap: 60px;
     left: 62px;
     position: absolute;
     top: 19px;
