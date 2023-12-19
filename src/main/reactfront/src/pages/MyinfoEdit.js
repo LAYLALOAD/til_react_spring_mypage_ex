@@ -8,9 +8,9 @@ const PasswordCheck = () => {
     return (
         <div className="myinfo-edit-index">
             <div className="div-2">
+                <MypageMyinfoEdit className="mypage-myinfo-edit-wrap-instance" />
                 <MypageSidebarWrap className="mypage-sidebar-wrap-instance" />
                 <MypageFooterWrap className="mypage-footer-wrap-instance" />
-                <MypageMyinfoEdit className="mypage-myinfo-edit-wrap-instance" />
             </div>
         </div>
     );

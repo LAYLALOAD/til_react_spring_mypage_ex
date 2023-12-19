@@ -15,6 +15,7 @@ public class MemberService {
 
   private final MemberRepository memberRepository;
 
+
   // 회원 생성 메서드
   public void createUser(Member member) {
     memberRepository.save(member);
@@ -25,6 +26,15 @@ public class MemberService {
     Optional<Member> optionalMember = memberRepository.findByMemberId(memberId);
 
     return optionalMember.orElse(null);
+  }
+
+  // 비밀번호 확인 메서드
+  public boolean checkPassword(Long memberId, String password) {
+    Optional<Member> optionalMember = memberRepository.findByMemberId(memberId);
+
+    return optionalMember
+        .map(member -> member.getPassword().equals(password))
+        .orElse(false);
   }
 
   // 회원 정보 업데이트 메서드
@@ -39,7 +49,7 @@ public class MemberService {
     existingMember.setPhone(updatedMember.getPhone());
     existingMember.setProfile(updatedMember.getProfile());
 
-    // Save the updated member
+    // 수정된 회원정보 저장
     memberRepository.save(existingMember);
   }
 

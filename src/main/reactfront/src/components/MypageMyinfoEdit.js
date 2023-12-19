@@ -32,8 +32,8 @@ export const MypageMyinfoEdit = ({ className, buttonCancelClassName }) => {
         });
     }, []);
 
-    //// 새 비밀번호와 비밀번호 확인이 일치하는지 검증하는 함수입니다.
-    // // 일치하지 않으면 오류 메시지를 설정하고, 일치하면 오류 메시지를 초기화합니다.
+    // 새 비밀번호와 비밀번호 확인이 일치하는지 검증하는 함수입니다.
+    // 일치하지 않으면 오류 메시지를 설정하고, 일치하면 오류 메시지를 초기화합니다.
     const validatePassword = () => {
         const { newPassword, confirmPassword } = updatedMember;
 
@@ -78,10 +78,10 @@ export const MypageMyinfoEdit = ({ className, buttonCancelClassName }) => {
             // Axios를 사용하여 서버로 회원 정보 업데이트 요청 보내기
             const response = await Axios.put(apiUrl, updatedMember);
 
-            // 성공적으로 업데이트되면 적절한 처리를 수행하세요
+            // 성공적으로 업데이트
             console.log('회원 정보가 성공적으로 업데이트되었습니다.', response.data);
         } catch (error) {
-            // 에러가 발생하면 적절한 처리를 수행하세요
+            // 에러 발생
             console.error('회원 정보 업데이트에 실패했습니다.', error);
         }
     };
@@ -126,6 +126,7 @@ export const MypageMyinfoEdit = ({ className, buttonCancelClassName }) => {
                                     name="name"
                                     value={updatedMember.name}
                                     onChange={handleInputChange}
+                                    readOnly
                                 />
                             </div>
                         </div>
@@ -140,6 +141,7 @@ export const MypageMyinfoEdit = ({ className, buttonCancelClassName }) => {
                                 name="email"
                                 value={updatedMember.email}
                                 onChange={handleInputChange}
+                                readOnly
                             />
                         </div>
                     </div>

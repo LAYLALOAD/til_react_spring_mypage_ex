@@ -1,6 +1,7 @@
 package com.example.react_spring_mypage_ex.controller.member;
 
 import com.example.react_spring_mypage_ex.dto.member.MypageDto;
+import com.example.react_spring_mypage_ex.dto.member.PasswordDto;
 import com.example.react_spring_mypage_ex.entity.member.Member;
 import com.example.react_spring_mypage_ex.entity.member.Point;
 import com.example.react_spring_mypage_ex.service.member.MemberService;
@@ -26,7 +27,7 @@ public class MemberController {
   public ResponseEntity<MypageDto> getMember(@PathVariable("memberId") Long memberId) {
     Member member = memberService.findMemberByMemberId(memberId);
     Point point = pointService.findByMemberId(memberId);
-    log.info("member = {}, point = {}", member, point);
+//    log.info("member = {}, point = {}", member, point);
     if (member != null && point != null) {
       MypageDto mypageDto = new MypageDto(member, point);
       return new ResponseEntity<>(mypageDto, HttpStatus.OK);
@@ -35,8 +36,20 @@ public class MemberController {
     }
   }
 
+  // 비밀번호 확인 API
+  @PostMapping("/passwordcheck/{memberId}")
+  public ResponseEntity<String> checkPassword(@PathVariable("memberId") Long memberId, @RequestBody PasswordDto passwordDto) {
+//    log.info("password: {}",passwordDto.getPassword());
+    boolean passwordMatch = memberService.checkPassword(memberId, passwordDto.getPassword());
+    if (passwordMatch) {
+      return new ResponseEntity<>("{\"success\": true}", HttpStatus.OK);
+    } else {
+      return new ResponseEntity<>("{\"success\": false}", HttpStatus.OK);
+    }
+  }
+
   // 회원 정보 수정 API
-  @PutMapping("/mypage/update")
+  @PutMapping("/mypage/update/{memberId}")
   public ResponseEntity<String> updateMember(@RequestBody Member updatedMember) {
     try {
       memberService.updateMember(updatedMember);
@@ -46,9 +59,6 @@ public class MemberController {
       return new ResponseEntity<>("회원 정보 업데이트에 실패했습니다.", HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
-
-
-
 
 
 }

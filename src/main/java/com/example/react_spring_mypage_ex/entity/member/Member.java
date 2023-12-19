@@ -52,5 +52,7 @@ public class Member {
   @JsonIgnore
   private Point point;
 
+
+
 }
 

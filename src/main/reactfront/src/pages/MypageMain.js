@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Axios from "axios";
+import { Link } from 'react-router-dom';
 import './MypageMain.css';
 import {MypageFooterWrap} from "../components/MypageFooter";
 import {MypageSidebarWrap} from "../components/MypageSidebar";
@@ -30,7 +31,9 @@ const MypageMain = () => {
                             <div className="title">나의 정보</div>
                             <div className="card"/>
                             <div className="button-edit">
+                              <Link to="/password-check">
                                 <div className="edit">수정</div>
+                              </Link>
                             </div>
                             <div className="my-info-user-status">
                                 <div className="status">상태</div>
