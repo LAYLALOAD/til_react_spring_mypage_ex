@@ -7,6 +7,10 @@ public class MyinfoUpdateDto {
 
   @NotNull
   @NotBlank
+  private Long memberId;
+
+  @NotNull
+  @NotBlank
   private String profile;
 
   @NotNull
@@ -16,4 +20,6 @@ public class MyinfoUpdateDto {
   @NotNull
   @NotBlank
   private String password;
+
+
 }

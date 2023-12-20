@@ -1,5 +1,6 @@
 package com.example.react_spring_mypage_ex.controller.member;
 
+import com.example.react_spring_mypage_ex.dto.member.MyinfoUpdateDto;
 import com.example.react_spring_mypage_ex.dto.member.MypageDto;
 import com.example.react_spring_mypage_ex.dto.member.PasswordDto;
 import com.example.react_spring_mypage_ex.entity.member.Member;
@@ -24,10 +25,11 @@ public class MemberController {
 
   //회원 조회 API
   @GetMapping("/mypage/{memberId}")
-  public ResponseEntity<MypageDto> getMember(@PathVariable("memberId") Long memberId) {
+  public ResponseEntity<MypageDto> getMember(@PathVariable Long memberId) {
+    log.info("memberId: {}",memberId.getClass());
     Member member = memberService.findMemberByMemberId(memberId);
     Point point = pointService.findByMemberId(memberId);
-//    log.info("member = {}, point = {}", member, point);
+    log.info("member = {}, point = {}", member, point);
     if (member != null && point != null) {
       MypageDto mypageDto = new MypageDto(member, point);
       return new ResponseEntity<>(mypageDto, HttpStatus.OK);
@@ -49,16 +51,31 @@ public class MemberController {
   }
 
   // 회원 정보 수정 API
-  @PutMapping("/mypage/update/{memberId}")
-  public ResponseEntity<String> updateMember(@RequestBody Member updatedMember) {
+  @PostMapping("/update/{memberId}")
+  public ResponseEntity<String> updateMember(@RequestBody MyinfoUpdateDto myinfoUpdateDto) {
     try {
-      memberService.updateMember(updatedMember);
+      memberService.updateMember(myinfoUpdateDto);
       return new ResponseEntity<>("회원 정보가 성공적으로 업데이트되었습니다.", HttpStatus.OK);
     } catch (Exception e) {
       log.error("회원 정보 업데이트에 실패했습니다.", e);
       return new ResponseEntity<>("회원 정보 업데이트에 실패했습니다.", HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
+
+  //회원 정보 삭제 API
+  @DeleteMapping("/unregister/{memberId}")
+  public ResponseEntity<String> deleteMember(@PathVariable("memberId") Long memberId) {
+    try {
+      // Change the argument to memberId
+      memberService.deleteMember(memberId);
+      return new ResponseEntity<>("회원 정보가 성공적으로 삭제되었습니다.", HttpStatus.OK);
+    } catch (Exception e) {
+      log.error("회원 정보 삭제에 실패했습니다.", e);
+      return new ResponseEntity<>("회원 정보 삭제에 실패했습니다.", HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
+
 
 
 }
