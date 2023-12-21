@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(originPatterns = "http://localhost:3000")
 @RestController
-@RequestMapping(value="/api")
+@RequestMapping("/api")
 @RequiredArgsConstructor
 @Slf4j
 public class MemberController {
@@ -25,7 +25,7 @@ public class MemberController {
 
   //회원 조회 API
   @GetMapping("/mypage/{memberId}")
-  public ResponseEntity<MypageDto> getMember(@PathVariable Long memberId) {
+  public ResponseEntity<MypageDto> getMember(@PathVariable("memberId") Long memberId) {
     log.info("memberId: {}",memberId.getClass());
     Member member = memberService.findMemberByMemberId(memberId);
     Point point = pointService.findByMemberId(memberId);
@@ -74,8 +74,4 @@ public class MemberController {
       return new ResponseEntity<>("회원 정보 삭제에 실패했습니다.", HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
-
-
-
-
 }

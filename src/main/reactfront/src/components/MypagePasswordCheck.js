@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 import "./MypagePasswordCheck.css";
 
-export const MypagePasswordCheckWrap = ({ className, buttonCancelClassName }) => {
+export const MypagePasswordCheckWrap = ({ className }) => {
 
     const [member, setMember] = useState("");
     const [password, setPassword] = useState("");
@@ -54,10 +54,10 @@ export const MypagePasswordCheckWrap = ({ className, buttonCancelClassName }) =>
 
 
 
-    const handleCancelClick = () => {
-        // 취소 버튼을 누르면 마이페이지 메인 페이지로 이동하도록 설정
-        navigate("/");
-    };
+    // const handleCancelClick = () => {
+    //     // 취소 버튼을 누르면 마이페이지 메인 페이지로 이동하도록 설정
+    //     navigate("/");
+    // };
 
     return (
         <div className={`mypage-password-check ${className}`}>
@@ -85,7 +85,7 @@ export const MypagePasswordCheckWrap = ({ className, buttonCancelClassName }) =>
                     <div className="button-continue" onClick={handlePasswordSubmit}>
                         <div className="continue">{loading ? '확인 중...' : '확인'}</div>
                     </div>
-                    <div className={`button-cancel ${buttonCancelClassName}`} onClick={handleCancelClick}>
+                    <div className="button-cancel" >
                         <div className="cancel">취소</div>
                     </div>
                 </div>
@@ -96,6 +96,5 @@ export const MypagePasswordCheckWrap = ({ className, buttonCancelClassName }) =>
 };
 
 MypagePasswordCheckWrap.propTypes = {
-    className: PropTypes.string.isRequired,
-    buttonCancelClassName: PropTypes.string.isRequired,
+    className: PropTypes.string.isRequired
 };

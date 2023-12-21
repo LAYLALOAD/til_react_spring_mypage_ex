@@ -11,9 +11,8 @@ import java.util.Optional;
 @EnableJpaRepositories
 public interface MemberRepository extends JpaRepository<Member, Long> {
 
-  // MemberId를 기반으로 회원 조회
+  // MemberId 기준 회원정보 조회
   Optional<Member> findByMemberId(Long memberId);
 
-  // 회원 정보 삭제
-  void deleteByMemberId(Long memberId);
+
 }

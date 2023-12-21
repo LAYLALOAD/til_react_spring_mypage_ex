@@ -26,9 +26,8 @@ public class MemberService {
 
   // 회원 정보 조회 메서드
   public Member findMemberByMemberId(Long memberId) {
-    Optional<Member> optionalMember = memberRepository.findByMemberId(memberId);
+    Optional<Member> optionalMember = memberRepository.findById(memberId);
     log.info("memberId: {}",memberId.getClass());
-
     return optionalMember.orElse(null);
   }
 
@@ -43,23 +42,26 @@ public class MemberService {
 
   // 회원 정보 업데이트 메서드
   public void updateMember(MyinfoUpdateDto myinfoUpdateDto) {
-//    Member existingMember = memberRepository.findById(myinfoUpdateDto.getMemberId())
-//        .orElseThrow(() -> new IllegalArgumentException("해당 회원이 존재하지 않습니다."));
-//
-//    // Update fields based on your requirements
-//    existingMember.setName(updatedMember.getName());
-//    existingMember.setEmail(updatedMember.getEmail());
-//    existingMember.setAddress(updatedMember.getAddress());
-//    existingMember.setPhone(updatedMember.getPhone());
-//    existingMember.setProfile(updatedMember.getProfile());
-//
-//    // 수정된 회원정보 저장
-//    memberRepository.save(existingMember);
+    Optional<Member> optionalMember = memberRepository.findByMemberId(myinfoUpdateDto.getMemberId());
+
+    if (optionalMember.isPresent()) {
+      Member member = optionalMember.get();
+
+      member.setProfile(myinfoUpdateDto.getProfile());
+      member.setPhone(myinfoUpdateDto.getPhone());
+      member.setPassword(myinfoUpdateDto.getPassword());
+
+      memberRepository.save(member);
+    } else {
+      log.error("해당 memberId에 대한 회원을 찾을 수 없습니다.");
+      throw new RuntimeException("해당 memberId에 대한 회원을 찾을 수 없습니다.");
+    }
   }
 
   // 회원 정보 삭제
   public void deleteMember(Long memberId) {
-    memberRepository.deleteByMemberId(memberId);
+    memberRepository.deleteById(memberId);
   }
+
 
 }

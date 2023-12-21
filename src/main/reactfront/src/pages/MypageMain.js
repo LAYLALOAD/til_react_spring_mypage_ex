@@ -8,14 +8,15 @@ import {MypageHeaderWrap} from "../components/MypageHeader";
 
 const MypageMain = () => {
 
-        const [member, setMember] = useState("");
+        const [member, setMember] = useState();
 
         useEffect(() => {
             // 1번 user 로그인 되었다는 가정으로 url에 /1 추가함 (로그인 페이지 연결후 변경할 것)
             Axios.get("http://localhost:8080/api/mypage/1").then((response) => {
+                // console.log(response)
                 if (response.data) {
                     //회원 정보 확인용
-                    console.log(response.data);
+                    // console.log(response.data);
                     setMember(response.data);
                 } else {
                     alert("failed to ");
@@ -43,12 +44,12 @@ const MypageMain = () => {
                                         alt="Vector"
                                         src="https://cdn.animaapp.com/projects/656fc45c1d7b0bae0287709d/releases/65702bf70e1788ccd008ca5c/img/vector.svg"
                                     />
-                                    <div className="text-wrapper">{member.role}</div>
+                                    <div className="text-wrapper">{member ? member.role : "Loading.."}</div>
                                 </div>
                             </div>
                             <div className="my-info-grade">
                                 <div className="overlap">
-                                    <div className="text-wrapper">{member.gradeId}</div>
+                                    <div className="text-wrapper">{member ? member.gradeId : "Loading.."}</div>
                                     <img
                                         className="grade-seed"
                                         alt="Grade seed"
@@ -59,19 +60,19 @@ const MypageMain = () => {
                             </div>
                             <div className="my-info-point">
                                 <div className="overlap">
-                                    <div className="text-wrapper-2">{member.holding}</div>
+                                    <div className="text-wrapper-2">{member ? member.holding : "Loading.."}</div>
                                 </div>
                                 <div className="point">포인트</div>
                             </div>
                             <div className="my-info-email">
                                 <div className="overlap">
-                                    <div className="name-2">{member.email}</div>
+                                    <div className="name-2">{member ? member.email : "Loading.."}</div>
                                 </div>
                                 <div className="email">이메일</div>
                             </div>
                             <div className="my-info-name">
                                 <div className="overlap">
-                                    <div className="name-2">{member.name}</div>
+                                    <div className="name-2">{member ? member.name : "Loading.."}</div>
                                 </div>
                                     <div className="name">이름</div>
                             </div>
