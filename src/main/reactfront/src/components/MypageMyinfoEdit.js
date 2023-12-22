@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "./MypageMyinfoEdit.css";
 import PropTypes from "prop-types";
 import Axios from "axios";
+import { Link } from 'react-router-dom';
 
 export const MypageMyinfoEdit = ({ className }) => {
 
@@ -11,15 +12,16 @@ export const MypageMyinfoEdit = ({ className }) => {
         email: '',
         profile: '',
         phone: '',
-        passwordasis: '',
-        passwordtobe: '',
-        passwordcheck: ''
+        passwordAsis: '',
+        passwordTobe: '',
+        passwordCheck: ''
     })
     const [passwordError, setPasswordError] = useState('');
     const [uploadedImage, setUploadedImage] = useState(false);
     const [ file, setFile ] = useState(null);
     const [progress, setProgress] = useState({ started: false, pc: 0 });
     const [ msg, setMsg ] = useState(null);
+    const [previewImage, setPreviewImage] = useState(null); // 추가된 부분
 
     useEffect(() => {
         // 1번 user 로그인 되었다는 가정으로 url에 /1 추가함 (로그인 페이지 연결후 변경할 것)
@@ -33,8 +35,42 @@ export const MypageMyinfoEdit = ({ className }) => {
         });
     }, []);
 
-    // image upload test
-    function handleUpload() {
+    // 프로필 이미지 미리 보기를 업데이트하는 함수
+    const handlePreviewImage = (e) => {
+        const file = e.target.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setPreviewImage(reader.result);
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+
+    // 회원 정보 수정 요청을 서버로 보내는 함수
+    const handleUpdateMember = async () => {
+        try {
+            validatePassword();
+
+            if (passwordError) {
+                console.error('비밀번호가 일치하지 않습니다.');
+                return;
+            }
+
+            // 여기에 회원 정보 업데이트 API 엔드포인트를 넣어주세요
+            const apiUrl = 'http://localhost:8080/api/update';
+
+            // Axios를 사용하여 서버로 회원 정보 업데이트 요청 보내기
+            const response = await Axios.put(apiUrl, updatedMember);
+
+            // 성공적으로 업데이트
+            console.log('회원 정보가 성공적으로 업데이트되었습니다.', response.data);
+        } catch (error) {
+            // 에러 발생
+            console.error('회원 정보 업데이트에 실패했습니다.', error);
+        }
+
         if (!file) {
             setMsg("선택된 파일이 없습니다.")
             return;
@@ -58,44 +94,15 @@ export const MypageMyinfoEdit = ({ className }) => {
         })
             .then(res => {
                 setMsg("업로드 성공");
+                setUploadedImage(true);
                 console.log(res.data);
             })
             .catch(err => {
                 setMsg("업로드 실패 ");
                 console.error(err)
             });
-    }
 
 
-    // 프로필 이미지 변경 이벤트 핸들러 함수
-    const handleProfileImageChange = async () => {
-        try {
-            const fileInput = document.createElement('input');
-            fileInput.type = 'file';
-            fileInput.accept = 'image/*';
-            fileInput.click();
-
-            fileInput.addEventListener('change', async (event) => {
-                const file = event.target.files[0];
-
-                const formData = new FormData();
-                formData.append('profileImage', file);
-
-                const apiUrl = 'http://localhost:8080/api/upload-profile-image';
-                const response = await Axios.post(apiUrl, formData);
-
-                // 서버에서 반환된 이미지 경로를 상태에 업데이트합니다.
-                setUpdatedMember({
-                    ...updatedMember,
-                    profile: response.data.imagePath,
-                });
-
-                // 업로드 상태를 true로 설정합니다.
-                setUploadedImage(true);
-            });
-        } catch (error) {
-            console.error('프로필 이미지 변경에 실패했습니다.', error);
-        }
     };
 
     // 새 비밀번호와 비밀번호 확인이 일치하는지 검증하는 함수입니다.
@@ -117,31 +124,6 @@ export const MypageMyinfoEdit = ({ className }) => {
             ...updatedMember,
             [name]: value,
         });
-    };
-
-
-    // 회원 정보 수정 요청을 서버로 보내는 함수
-    const handleUpdateMember = async () => {
-        try {
-            validatePassword();
-
-            if (passwordError) {
-                console.error('비밀번호가 일치하지 않습니다.');
-                return;
-            }
-
-            // 여기에 회원 정보 업데이트 API 엔드포인트를 넣어주세요
-            const apiUrl = 'http://localhost:8080/api/mypage/update';
-
-            // Axios를 사용하여 서버로 회원 정보 업데이트 요청 보내기
-            const response = await Axios.put(apiUrl, updatedMember);
-
-            // 성공적으로 업데이트
-            console.log('회원 정보가 성공적으로 업데이트되었습니다.', response.data);
-        } catch (error) {
-            // 에러 발생
-            console.error('회원 정보 업데이트에 실패했습니다.', error);
-        }
     };
 
     // 회원 탈퇴 요청을 서버로 보내는 함수
@@ -181,7 +163,7 @@ export const MypageMyinfoEdit = ({ className }) => {
                                 <input
                                     type="text"
                                     name="name"
-                                    value={updatedMember.name}
+                                    value={updatedMember.name ||''}
                                     onChange={handleInputChange}
                                     readOnly
                                 />
@@ -196,10 +178,11 @@ export const MypageMyinfoEdit = ({ className }) => {
                             <input
                                 type="text"
                                 name="email"
-                                value={updatedMember.email}
+                                value={updatedMember.email ||''}
                                 onChange={handleInputChange}
                                 readOnly
                             />
+
                         </div>
                     </div>
                     <div className="my-info-detail-9">
@@ -208,44 +191,31 @@ export const MypageMyinfoEdit = ({ className }) => {
                         </div>
                         <div className="table-data-profile">
                             <div>
-
-                                <div style={{position:'absolute', width:'500px', height:'500px', top:'1000px'}}>
-                                    <h1>프로필 사진 올리기 연습</h1>
-                                    <input
-                                        onChange={ (e) => { setFile(e.target.files[0]) } }
-                                        type="file"
-                                        name="profile"
-                                    />
-                                    <button onClick={ handleUpload }>업로드</button>
-                                    { progress.started && <progress max="100" value={progress.pc}></progress> }
-                                    { msg && <span>{msg}</span> }
-                                </div>
-
-                                {uploadedImage ? (
-                                    // 서버에서 반환된 이미지 경로를 사용하여 수정된 이미지를 표시
+                                {/* 프로필 이미지 표시 */}
+                                {previewImage ? (
                                     <img
-                                        src={`http://localhost:8080/${updatedMember.profile}`}
-                                        alt="profileimg"
+                                        src={previewImage}
+                                        alt="profile-preview"
                                         className='my-info-detail-8'
                                     />
+
                                 ) : (
-                                    // 이미지 업로드 전 기본 프로필
                                     <img
-                                        src={`http://localhost:8080/${updatedMember.profile}`}
+                                        src={uploadedImage ? updatedMember.profile : require("../assets/profileImgEx.png")}
                                         alt="profileimg"
                                         className='my-info-detail-8'
                                     />
                                 )}
-                            </div>
-                            <div className="overlap-group-wrapper">
-                                <div className="overlap-group-4">
-                                    {uploadedImage ? null : (
-                                        <div className="button-2" onClick={handleProfileImageChange} />
-                                    )}
-                                    <div className="edit" onClick={handleProfileImageChange}>
-                                        {uploadedImage ? '취소' : '수정'}
-                                    </div>
-                                </div>
+                                {/* 프로필 이미지 입력 필드 */}
+                                <label className="myinfo-profileImg-label" htmlFor="profileImg">수정</label>
+                                <input
+                                    className="myinfo-profileImg-input"
+                                    onChange={(e) => { setFile(e.target.files[0]); handlePreviewImage(e); }}
+                                    type="file"
+                                    accept="image/*"
+                                    id="profileImg"
+                                    name="profile"
+                                />
                             </div>
                         </div>
                     </div>
@@ -257,7 +227,7 @@ export const MypageMyinfoEdit = ({ className }) => {
                             <input
                                 type="text"
                                 name="phone"
-                                value={updatedMember.phone}
+                                value={updatedMember.phone ||''}
                                 onChange={handleInputChange}
                             />
                         </div>
@@ -272,7 +242,7 @@ export const MypageMyinfoEdit = ({ className }) => {
                                     type="password"
                                     name="currentPassword"
                                     placeholder="현재 비밀번호"
-                                    value={updatedMember.passwordasis}
+                                    value={updatedMember.passwordAsis ||''}
                                     onChange={handleInputChange}
                                 />
                             </div>
@@ -281,7 +251,7 @@ export const MypageMyinfoEdit = ({ className }) => {
                                     type="password"
                                     name="password"
                                     placeholder="비밀번호"
-                                    value={updatedMember.passwordtobe}
+                                    value={updatedMember.passwordTobe ||''}
                                     onChange={handleInputChange}
                                 />
                             </div>
@@ -290,7 +260,7 @@ export const MypageMyinfoEdit = ({ className }) => {
                                     type="password"
                                     name="confirmPassword"
                                     placeholder="비밀번호 다시 입력"
-                                    value={updatedMember.passwordcheck}
+                                    value={updatedMember.passwordCheck ||''}
                                     onChange={handleInputChange}
                                     onBlur={validatePassword}
                                 />
@@ -309,9 +279,13 @@ export const MypageMyinfoEdit = ({ className }) => {
                     <div className="button-area">
                         <div className="button-continue" onClick={handleUpdateMember}>
                             <div className="continue">확인</div>
+                            { progress.started && <progress max="100" value={progress.pc}></progress> }
+                            { msg && <span>{msg}</span> }
                         </div>
                         <div className="button-cancel">
-                            <div className="cancel">취소</div>
+                            <Link to="/">
+                                <div className="cancel">취소</div>
+                            </Link>
                         </div>
                     </div>
                 </div>

@@ -457,6 +457,26 @@
     position: relative;
 }
 
+
+.myinfo-profileImg-label {
+   margin: 5px 0 0 50px;
+   font-weight: bold;
+   font-size: 12px;
+    color: #ffffff;
+    text-align: center;
+    width: 40px;
+    background-color: #d9d9d9;
+    border-radius: 2px;
+
+   display: inline-block;
+   cursor: pointer;
+}
+
+
+.table-data-profile .myinfo-profileImg-input[type="file"] {
+    display: none;
+}
+
 .mypage-my-info-edit .my-info-detail-8 {
     background-position: 50% 50%;
     background-size: cover;

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Axios from "axios";
-import { useNavigate } from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import PropTypes from "prop-types";
 
 import "./MypagePasswordCheck.css";
@@ -86,7 +86,9 @@ export const MypagePasswordCheckWrap = ({ className }) => {
                         <div className="continue">{loading ? '확인 중...' : '확인'}</div>
                     </div>
                     <div className="button-cancel" >
-                        <div className="cancel">취소</div>
+                        <Link to="/">
+                            <div className="cancel">취소</div>
+                        </Link>
                     </div>
                 </div>
                 {error && <div className="error-message">{error}</div>}
