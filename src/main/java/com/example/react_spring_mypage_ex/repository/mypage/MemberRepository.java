@@ -1,6 +1,7 @@
-package com.example.react_spring_mypage_ex.repository.member;
+package com.example.react_spring_mypage_ex.repository.mypage;
 
-import com.example.react_spring_mypage_ex.entity.member.Member;
+
+import com.example.react_spring_mypage_ex.entity.mypage.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;

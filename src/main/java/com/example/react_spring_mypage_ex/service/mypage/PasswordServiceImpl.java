@@ -1,6 +1,6 @@
-package com.example.react_spring_mypage_ex.service.member;
+package com.example.react_spring_mypage_ex.service.mypage;
 
-import com.example.react_spring_mypage_ex.dto.member.PasswordDto;
+import com.example.react_spring_mypage_ex.dto.mypage.PasswordDto;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -1,12 +1,12 @@
-package com.example.react_spring_mypage_ex.controller.member;
+package com.example.react_spring_mypage_ex.controller.mypage;
 
-import com.example.react_spring_mypage_ex.dto.member.MyinfoUpdateDto;
-import com.example.react_spring_mypage_ex.dto.member.MypageDto;
-import com.example.react_spring_mypage_ex.dto.member.PasswordDto;
-import com.example.react_spring_mypage_ex.entity.member.Member;
-import com.example.react_spring_mypage_ex.entity.member.Point;
-import com.example.react_spring_mypage_ex.service.member.MemberService;
-import com.example.react_spring_mypage_ex.service.member.PointService;
+import com.example.react_spring_mypage_ex.dto.mypage.MyinfoUpdateDto;
+import com.example.react_spring_mypage_ex.dto.mypage.MypageDto;
+import com.example.react_spring_mypage_ex.dto.mypage.PasswordDto;
+import com.example.react_spring_mypage_ex.entity.mypage.Member;
+import com.example.react_spring_mypage_ex.entity.mypage.Point;
+import com.example.react_spring_mypage_ex.service.mypage.MemberService;
+import com.example.react_spring_mypage_ex.service.mypage.PointService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -27,7 +27,7 @@ public class MemberController {
   @GetMapping("/mypage/{memberId}")
   public ResponseEntity<MypageDto> getMember(@PathVariable("memberId") Long memberId) {
     log.info("memberId: {}",memberId.getClass());
-    Member member = memberService.findMemberByMemberId(memberId);
+    Member member = memberService.getMemberById(memberId);
     Point point = pointService.findByMemberId(memberId);
     log.info("member = {}, point = {}", member, point);
     if (member != null && point != null) {

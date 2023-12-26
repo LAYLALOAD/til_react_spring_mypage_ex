@@ -1,4 +1,4 @@
-package com.example.react_spring_mypage_ex.entity.member;
+package com.example.react_spring_mypage_ex.entity.mypage;
 
 import jakarta.persistence.*;
 import lombok.Getter;

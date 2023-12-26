@@ -1,4 +1,4 @@
-package com.example.react_spring_mypage_ex.dto.member;
+package com.example.react_spring_mypage_ex.dto.mypage;
 
 import lombok.Data;
 

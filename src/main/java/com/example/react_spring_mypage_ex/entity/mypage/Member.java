@@ -1,4 +1,4 @@
-package com.example.react_spring_mypage_ex.entity.member;
+package com.example.react_spring_mypage_ex.entity.mypage;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -52,7 +52,4 @@ public class Member {
   @JsonIgnore
   private Point point;
 
-
-
 }
-

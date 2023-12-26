@@ -1,8 +1,8 @@
-package com.example.react_spring_mypage_ex.service.member;
+package com.example.react_spring_mypage_ex.service.mypage;
 
-import com.example.react_spring_mypage_ex.dto.member.MyinfoUpdateDto;
-import com.example.react_spring_mypage_ex.entity.member.Member;
-import com.example.react_spring_mypage_ex.repository.member.MemberRepository;
+import com.example.react_spring_mypage_ex.dto.mypage.MyinfoUpdateDto;
+import com.example.react_spring_mypage_ex.entity.mypage.Member;
+import com.example.react_spring_mypage_ex.repository.mypage.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -25,7 +25,7 @@ public class MemberService {
   }
 
   // 회원 정보 조회 메서드
-  public Member findMemberByMemberId(Long memberId) {
+  public Member getMemberById(Long memberId) {
     Optional<Member> optionalMember = memberRepository.findById(memberId);
     log.info("memberId: {}",memberId.getClass());
     return optionalMember.orElse(null);

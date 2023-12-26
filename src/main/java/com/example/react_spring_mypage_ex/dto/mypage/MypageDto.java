@@ -1,8 +1,9 @@
-package com.example.react_spring_mypage_ex.dto.member;
+package com.example.react_spring_mypage_ex.dto.mypage;
 
-import com.example.react_spring_mypage_ex.entity.member.Member;
-import com.example.react_spring_mypage_ex.entity.member.Point;
-import com.example.react_spring_mypage_ex.entity.member.Role;
+
+import com.example.react_spring_mypage_ex.entity.mypage.Member;
+import com.example.react_spring_mypage_ex.entity.mypage.Point;
+import com.example.react_spring_mypage_ex.entity.mypage.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

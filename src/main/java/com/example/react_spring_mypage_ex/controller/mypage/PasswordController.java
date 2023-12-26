@@ -1,7 +1,7 @@
-package com.example.react_spring_mypage_ex.controller.member;
+package com.example.react_spring_mypage_ex.controller.mypage;
 
-import com.example.react_spring_mypage_ex.dto.member.PasswordDto;
-import com.example.react_spring_mypage_ex.service.member.PasswordService;
+import com.example.react_spring_mypage_ex.dto.mypage.PasswordDto;
+import com.example.react_spring_mypage_ex.service.mypage.PasswordService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
